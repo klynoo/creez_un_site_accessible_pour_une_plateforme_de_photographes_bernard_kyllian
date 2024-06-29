@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/pages/GalleryPage/styles.css" />
+    <!-- ici -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- ici -->
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <a href="index.html"
+          ><img src="./src/assets/images/logo.png" alt="logo"
+        /></a>
+      </div>
+    </header>
+    <nav>
+      <div id="photographer_section" class="photographer_section"></div>
+      <div id="contact-modal" class="contact-modal dialog" aria-hidden="true">
+        <div
+          class="contact-modal__form"
+          role="document"
+          aria-labelledby="nameForm"
+          aria-modal="true"
+        >
+          <header class="contact-modal__header">
+            <div class="contact-modal__title" id="nameForm">
+              <h2>Contactez-moi</h2>
+            </div>
+            <div class="contact-modal__header__img" data-a11y-dialog-hide>
+              <img
+                src="src/assets/icons/close.svg"
+                id="closeModal"
+                tabindex="0"
+                aria-label="Fermer la modale"
+                role="button"
+                alt="croix pour fermer"
+              />
+            </div>
+          </header>
+          <form name="contact" id="contact" method="get" class="contact-form">
+            <div class="contact-form__field">
+              <label for="first" class="contact-form__label" >
+                Prénom
+                <input
+                  type="text"
+                  id="first"
+                  name="first"
+                  class="contact-form__input"
+                  title="Entrez votre prénom"
+                />
+              </label>
+            <div class="contact-form__field">
+              <label for="last" class="contact-form__label">Nom
+              <input
+                type="text"
+                id="last"
+                name="last"
+                class="contact-form__input"
+                title="Entrez votre nom"
+              />
+            </label>
+            </div>
+            <div class="contact-form__field">
+              <label for="email" class="contact-form__label">Email
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="contact-form__input"
+                title="entrez votre email"
+              />
+            </label>
+            </div>
+            <div class="contact-form__field">
+              <label for="text" class="contact-form__label">Votre message
+              <textarea
+                class="contact-form__textarea"
+                id="text"
+                name="text"
+                title="Entrez votre message"
+              ></textarea>
+            </label>
+            </div>
+            <button class="contact-form__button button-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div id="sort-dropdown" class="sort-dropdown">
+      <p>Trier par :</p>
+      <div id="dropdownLabel" class="dropdown-label">
+        <div
+          id="dropdown-button"
+          class="selectedValue-expend"
+          tabindex="0"
+          role="button"
+          aria-label="trier par :"
+        >
+          <span id="selectedValue" class="selectedValue">Sélectionner</span>
+          <div class="arrow-expend" id="expend">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M9.88 20.5466L16 14.44L22.12 20.5466L24 18.6666L16 10.6666L8 18.6666L9.88 20.5466Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+        <div id="dropdownMenu" class="dropdown-menu">
+          <a
+            href="#"
+            class="dropdown-item"
+            data-value="popularity"
+            id="popularity"
+            tabindex="0"
+            ><span class="dropdown-content-span"></span>Popularité</a
+          >
+
+          <a
+            href="#"
+            class="dropdown-item"
+            data-value="date"
+            id="date"
+            tabindex="0"
+            ><span class="dropdown-content-span"></span>Date</a
+          >
+
+          <a
+            href="#"
+            class="dropdown-item"
+            data-value="title"
+            id="title"
+            tabindex="0"
+            ><span class="dropdown-content-span"></span>Titre</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="figure" class="figure"></div>
+    <div class="container-modal-media" id="container-modal-media">
+      <div
+        class="modal-media"
+        id="modal-media"
+        role="dialog"
+        aria-labelledby="title-modal-media"
+      >
+        <em
+          class="fa-solid fa-chevron-left"
+          id="prev"
+          role="button"
+          tabindex="0"
+          aria-label="Previous media"
+        ></em>
+        <div id="modal-media__img" class="modal-media__img" role="document">
+          <p id="title-modal-media" class="modal-media__img-title">
+            Titre de l'image
+          </p>
+        </div>
+        <em
+          class="fa-solid fa-chevron-right"
+          id="next"
+          role="button"
+          tabindex="0"
+          aria-label="Next media"
+        ></em>
+        <em
+          class="fa-solid fa-xmark"
+          id="close-modal-media"
+          role="button"
+          tabindex="0"
+          aria-label="Close modal"
+        ></em>
+      </div>
+    </div>
+    <div id="bottomInfoBar" class="bottomInfoBar">
+      <p id="bottomInfoBarLikeCounter" class="bottomInfoBar__likeCounter">
+        <em class="fa-solid fa-heart"></em>
+      </p>
+    </div>
+    <script src="./src/script/pages/galleryPage.ts" type="module"></script>
+    <script src="./src/script/main.ts" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 45px 100px 45px;
+}
+
+.header__logo {
+  width: 200px;
+  height: 50px;
+}
+
+.header__logo img {
+  width: 100%;
+}
+
+.header p {
+  color: #901c1c;
+  font-family: "DM Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

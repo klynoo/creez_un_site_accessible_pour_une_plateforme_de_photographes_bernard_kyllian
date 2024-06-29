@@ -1,0 +1,69 @@
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin: 90px 0;
+}
+
+.photographer_section article {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgProfile {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imgProfile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.3);
+  transform-origin: center center;
+}
+
+.article-title {
+  color: #d3573c;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.location {
+  color: #901c1c;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.tagline {
+  color: #000;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.price {
+  color: #757575;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

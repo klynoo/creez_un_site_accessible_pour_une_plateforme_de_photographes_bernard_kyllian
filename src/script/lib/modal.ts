@@ -49,13 +49,11 @@ export class Modal {
     this.modal?.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "Tab") {
         if (e.shiftKey) {
-          /* shift + tab */ if (
-            document.activeElement === this.firstFocusableElement
-          ) {
+          if (document.activeElement === this.firstFocusableElement) {
             e.preventDefault();
             this.lastFocusableElement?.focus();
           }
-        } /* tab */ else {
+        } else {
           if (document.activeElement === this.lastFocusableElement) {
             e.preventDefault();
             this.firstFocusableElement?.focus();

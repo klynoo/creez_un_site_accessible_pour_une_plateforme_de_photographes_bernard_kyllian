@@ -1,16 +1,11 @@
 export class ApiFetch<T> {
   private filePath: string;
-  private cache: T | null;
 
   constructor(filePath: string) {
     this.filePath = filePath;
-    this.cache = null;
   }
 
   async fetchData(): Promise<T> {
-    if (this.cache) {
-      return this.cache;
-    }
     try {
       const response = await fetch(this.filePath);
       if (!response.ok) {
@@ -19,11 +14,10 @@ export class ApiFetch<T> {
         );
       }
       const data = await response.json();
-      this.cache = data;
-      if (this.cache === null) {
+      if (data === null) {
         throw new Error("Erreur: les données récupérées sont nulles");
       }
-      return this.cache;
+      return data;
     } catch (error) {
       console.error("Erreur lors de la lecture du fichier :", error);
       throw error;

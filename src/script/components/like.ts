@@ -1,4 +1,3 @@
-// likesManager.ts
 export function updateIcon(button: HTMLElement, isLiked: boolean): void {
   const icon: HTMLElement | null = button.querySelector("i");
   if (icon) {

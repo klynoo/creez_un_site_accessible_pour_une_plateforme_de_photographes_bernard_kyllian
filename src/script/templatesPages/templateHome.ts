@@ -21,7 +21,6 @@ export function photographerTemplate(data: ModelPhotographer) {
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.setAttribute("alt", `Portrait de ${name}`);
-    img.setAttribute("tabindex", "0");
 
     const article = document.createElement("article");
     const imgProfile = document.createElement("div");
@@ -29,18 +28,12 @@ export function photographerTemplate(data: ModelPhotographer) {
     imgProfile.appendChild(img);
     article.appendChild(imgProfile);
 
-    const nameForm = document.getElementById("nameForm");
-
     builder.buildAndAppend(article, "h2", name, "", ["article-title"]);
     builder.buildAndAppend(article, "p", `${city}, ${country}`, "", [
       "location",
     ]);
     builder.buildAndAppend(article, "p", tagline, "", ["tagline"]);
     builder.buildAndAppend(article, "p", `${price}€/jour`, "", ["price"]);
-
-    if (nameForm) {
-      builder.buildAndAppend(nameForm, "h2", name, "");
-    }
 
     link.appendChild(article);
     return link;
